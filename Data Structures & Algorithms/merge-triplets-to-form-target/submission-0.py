@@ -1,0 +1,14 @@
+class Solution:
+    def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
+        ans=[0,0,0]
+        for triplet in triplets:
+            if triplet[0]>target[0] or triplet[1]>target[1] or triplet[2]>target[2]:
+                continue
+            else:
+                ans[0]=max(ans[0],triplet[0])
+                ans[1]=max(ans[1],triplet[1])
+                ans[2]=max(ans[2],triplet[2])
+        if ans==target:
+            return True
+        else:
+            return False
